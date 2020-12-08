@@ -134,9 +134,6 @@ while True:
 
             if (event.key == pygame.K_UP):
                 ys = -12
-                player.frame = 4
-                player.first_frame = 4
-                player.last_frame = 4
             if (event.key == pygame.K_LEFT):
                 xs = -10
                 player.frame = 8
@@ -149,10 +146,6 @@ while True:
                 player.last_frame = 15
 
         if (event.type == pygame.KEYUP):
-            if (event.key == pygame.K_UP):
-                player.frame = 0
-                player.first_frame = 0
-                player.last_frame = 0
             if (event.key == pygame.K_LEFT):
                 xs = 0
                 player.frame = 8
