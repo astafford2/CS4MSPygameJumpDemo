@@ -86,7 +86,7 @@ ticks = pygame.time.get_ticks()
 
 # Player
 player = SpriteSheetImage(screen)
-player.load("retro-character-sprite-sheet.png", 43, 64, 4)
+player.load("retro-character-sprite-sheet.png", 42.75, 64, 4)
 playerGroup = pygame.sprite.Group()
 playerGroup.add(player)
 player.position = (400, 400)
