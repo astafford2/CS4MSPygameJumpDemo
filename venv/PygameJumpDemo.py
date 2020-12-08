@@ -106,10 +106,6 @@ while True:
     playerGroup.draw(screen)
 
     pygame.draw.lines(screen, white, False, [(500, 460), (500, 410), (550, 410), (550, 360), (700, 360)], 2)
-
-    pygame.draw.line(screen, red, (0, 410), (800, 410), 1)
-    pygame.draw.line(screen, red, (0, 356), (800, 356), 1)
-    pygame.draw.line(screen, red, (0, 306), (800, 306), 1)
     
     player.X += xs
     player.Y += ys
