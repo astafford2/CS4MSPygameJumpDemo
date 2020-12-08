@@ -96,3 +96,68 @@ player.last_frame = 0
 
 xs = 0
 ys = 0
+
+while True:
+    screen.fill(black)
+
+    playerGroup.update(ticks, 70)
+    playerGroup.draw(screen)
+    
+    player.X += xs
+    player.Y += ys
+    
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+        if (event.type == pygame.KEYDOWN):
+            if (event.key == pygame.K_r):
+                player.position = (400, 400)
+
+            if (event.key == pygame.K_UP):
+                ys = -10
+                player.frame = 4
+                player.first_frame = 4
+                player.last_frame = 7
+            if (event.key == pygame.K_DOWN):
+                ys = 10
+                player.frame = 0
+                player.first_frame = 0
+                player.last_frame = 3
+            if (event.key == pygame.K_LEFT):
+                xs = -10
+                player.frame = 8
+                player.first_frame = 8
+                player.last_frame = 11
+            if (event.key == pygame.K_RIGHT):
+                xs = 10
+                player.frame = 12
+                player.first_frame = 12
+                player.last_frame = 15
+
+        if (event.type == pygame.KEYUP):
+            if (event.key == pygame.K_UP):
+                ys = 0
+                player.frame = 4
+                player.first_frame = 4
+                player.last_frame = 4
+            if (event.key == pygame.K_DOWN):
+                ys = 0
+                player.frame = 0
+                player.first_frame = 0
+                player.last_frame = 0
+            if (event.key == pygame.K_LEFT):
+                xs = 0
+                player.frame = 8
+                player.first_frame = 8
+                player.last_frame = 8
+            if (event.key == pygame.K_RIGHT):
+                xs = 0
+                player.frame = 12
+                player.first_frame = 12
+                player.last_frame = 12
+
+    clock.tick(30)
+    ticks = pygame.time.get_ticks()
+    pygame.display.update()
