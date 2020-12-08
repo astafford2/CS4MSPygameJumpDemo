@@ -108,11 +108,12 @@ while True:
     
     player.X += xs
     player.Y += ys
+    ys += 1
 
     if player.Y >= 400:
         ys = 0
-    else:
-        ys += 1
+
+
     
     for event in pygame.event.get():
         if event.type == QUIT:
