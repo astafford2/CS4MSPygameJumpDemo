@@ -79,7 +79,20 @@ class SpriteSheetImage(pygame.sprite.Sprite):
 black = (0, 0, 0)
 
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("PyGame Demo")
+pygame.display.set_caption("PyGame Jumping Demo")
 
 clock = pygame.time.Clock()
 ticks = pygame.time.get_ticks()
+
+# Player
+player = SpriteSheetImage(screen)
+player.load("retro-character-sprite-sheet.png", 43, 64, 4)
+playerGroup = pygame.sprite.Group()
+playerGroup.add(player)
+player.position = (400, 400)
+player.frame = 0
+player.first_frame = 0
+player.last_frame = 0
+
+xs = 0
+ys = 0
