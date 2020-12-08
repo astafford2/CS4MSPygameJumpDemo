@@ -78,6 +78,7 @@ class SpriteSheetImage(pygame.sprite.Sprite):
 ##########################################
 black = (0, 0, 0)
 white = (255, 255, 255)
+red = (255, 0, 0)
 
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("PyGame Jumping Demo")
@@ -104,14 +105,25 @@ while True:
     playerGroup.update(ticks, 70)
     playerGroup.draw(screen)
 
-    pygame.draw.lines(screen, white, False, [(500, 460), (500, 410), (550, 410), (550, 360), (600, 360)], 2)
+    pygame.draw.lines(screen, white, False, [(500, 460), (500, 410), (550, 410), (550, 360), (700, 360)], 2)
+
+    pygame.draw.line(screen, red, (0, 410), (800, 410), 1)
+    pygame.draw.line(screen, red, (0, 356), (800, 356), 1)
+    pygame.draw.line(screen, red, (0, 306), (800, 306), 1)
     
     player.X += xs
     player.Y += ys
     ys += 1
 
-    if player.Y >= 400:
+    if player.Y >= 410:
         ys = 0
+
+    if player.X >= 500:
+        if player.Y >= 356:
+            ys = 0
+    if player.X >= 550:
+        if player.Y >= 306:
+            ys = 0
 
 
     
@@ -125,7 +137,7 @@ while True:
                 player.position = (400, 400)
 
             if (event.key == pygame.K_UP):
-                ys = -10
+                ys = -12
                 player.frame = 4
                 player.first_frame = 4
                 player.last_frame = 4
