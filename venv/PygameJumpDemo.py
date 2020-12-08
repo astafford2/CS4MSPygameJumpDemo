@@ -105,6 +105,11 @@ while True:
     
     player.X += xs
     player.Y += ys
+
+    if player.Y >= 400:
+        ys = 0
+    else:
+        ys += 1
     
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -119,12 +124,7 @@ while True:
                 ys = -10
                 player.frame = 4
                 player.first_frame = 4
-                player.last_frame = 7
-            if (event.key == pygame.K_DOWN):
-                ys = 10
-                player.frame = 0
-                player.first_frame = 0
-                player.last_frame = 3
+                player.last_frame = 4
             if (event.key == pygame.K_LEFT):
                 xs = -10
                 player.frame = 8
@@ -138,12 +138,6 @@ while True:
 
         if (event.type == pygame.KEYUP):
             if (event.key == pygame.K_UP):
-                ys = 0
-                player.frame = 4
-                player.first_frame = 4
-                player.last_frame = 4
-            if (event.key == pygame.K_DOWN):
-                ys = 0
                 player.frame = 0
                 player.first_frame = 0
                 player.last_frame = 0
