@@ -113,11 +113,10 @@ while True:
 
     if player.Y >= 410:
         ys = 0
-
-    if player.X >= 500:
+    if player.X >= 458.25:
         if player.Y >= 356:
             ys = 0
-    if player.X >= 550:
+    if player.X >= 508.25:
         if player.Y >= 306:
             ys = 0
 
